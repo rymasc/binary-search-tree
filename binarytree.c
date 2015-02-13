@@ -20,9 +20,9 @@ void Insert(treenode** root, int data){
 		*root = createNewNode(data);
 	}
 	else if(data <= *root->data){
-		*root->left = Insert(*root->left,data);
+		Insert(*root->left,data);
 	} else{
-		*root->right = Insert(*root->right,data);
+		Insert(*root->right,data);
 	}
 }
 

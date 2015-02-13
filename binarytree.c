@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct treenode{
+typedef struct treenode {
 	int data;
 	struct treenode *left;
 	struct treenode *right;
-}treenode;
+} treenode;
 
 treenode* createNewNode(int data){
 	treenode* newNode = malloc(sizeof(treenode));
@@ -15,22 +15,21 @@ treenode* createNewNode(int data){
 	return newNode;
 }
 
-void Insert(treenode** root, int data){
+void insert(treenode** root, int data){
 	if (*root == NULL){
 		*root = createNewNode(data);
 	}
-	else if(data <= *root->data){
-		Insert(*root->left,data);
+	else if(data <= (*root)->data){
+		insert(&(*root)->left,data);
 	} else{
-		Insert(*root->right,data);
+		insert(&(*root)->right,data);
 	}
 }
 
 
 int main(){
-	
 	treenode* root = NULL; //creates empty bst
-	Insert(&root, 15);
+	insert(&root, 15);
 	insert(&root, 20);	
 	//int input[13] = {1,1,3,3,4,4,5,5,6,6,8,12};		
 	return 0;

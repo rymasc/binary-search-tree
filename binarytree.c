@@ -10,6 +10,7 @@ typedef struct treenode {
 	struct treenode *right;
 } treenode;
 
+
 treenode* createNewNode(int data){
 	treenode* newNode = malloc(sizeof(treenode));
 	newNode->data = data; // or (*newNode).data = data;

@@ -1,6 +1,7 @@
 
 typedef struct node{
 	int freq;
+	int flag;
 	struct node* left;
 	struct node* right;
 }node;
@@ -15,8 +16,9 @@ typedef struct linkedList{
 int numOfNodes;
 
 
-node*			nodeInit(int freq); 	    	
-linkedList* 	listInit(int freq, node* element);
+node*			nodeInit(int freq); 
+node* 			nodeFlag(node* n);	    	
+linkedList* 	listInit(node* element);
 linkedList* 	sort(linkedList* messy);
 
 
